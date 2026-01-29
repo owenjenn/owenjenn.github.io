@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owen Jennings | Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="site-title">Owen Jennings</h1>
+            <p class="site-tagline">Welcome to my corner of the internet</p>
+        </div>
+    </header>
+
+    <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="gridirony">Gridirony</button>
+        <button class="tab-btn" data-tab="resume">Resume</button>
+    </nav>
+
+    <main class="content">
+        <!-- About Section -->
+        <section id="about" class="tab-content active">
+            <h2>About Me</h2>
+            <div class="about-intro">
+                <p>Hello! I'm Owen Jenn. Welcome to my personal website.</p>
+                <p>This is where I share a bit about myself, my sports predictions, and my professional background.</p>
+            </div>
+            <div class="about-details">
+                <h3>Interests</h3>
+                <ul>
+                    <li>Sports analytics and predictions</li>
+                    <li>Technology</li>
+                    <li>Add your interests here</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Gridirony Section -->
+        <section id="gridirony" class="tab-content">
+            <h2>Gridirony</h2>
+            <p class="section-intro">Here are my predictions for the week</p>
+
+            <div class="predictions-container">
+                <!-- Example Prediction Card -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="sport-tag">NFL</span>
+                        <span class="prediction-date">Feb 8, 2026</span>
+                    </div>
+                    <h3 class="matchup">Super Bowl LX</h3>
+                    <p class="prediction">
+                        <strong>My Pick:</strong> Seahawks to win
+                    </p>
+                    <p class="reasoning">Add your reasoning here...</p>
+                    <div class="result pending">
+                        <span>Pending</span>
+                    </div>
+                </div>
+
+                <!-- Another Example Card -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="sport-tag">NBA</span>
+                        <span class="prediction-date">June 2025</span>
+                    </div>
+                    <h3 class="matchup">NBA Finals</h3>
+                    <p class="prediction">
+                        <strong>My Pick:</strong> Your prediction here
+                    </p>
+                    <p class="reasoning">Add your reasoning here...</p>
+                    <div class="result pending">
+                        <span>Pending</span>
+                    </div>
+                </div>
+
+                <!-- Add more prediction cards as needed -->
+            </div>
+
+            <div class="stats-summary">
+                <h3>Prediction Record</h3>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Correct</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Incorrect</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="tab-content">
+            <h2>Resume</h2>
+
+            <div class="resume-actions">
+                <a href="assets/resume.pdf" download class="btn-download">
+                    <span class="btn-icon">&#8595;</span> Download PDF
+                </a>
+                <a href="assets/resume.pdf" target="_blank" class="btn-view">
+                    Open in New Tab
+                </a>
+            </div>
+
+            <div class="pdf-container">
+                <embed src="assets/resume.pdf" type="application/pdf" width="100%" height="800px">
+                <p class="pdf-fallback">
+                    Your browser doesn't support embedded PDFs.
+                    <a href="assets/resume.pdf" target="_blank">Click here to view the resume.</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Owen Jenn. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

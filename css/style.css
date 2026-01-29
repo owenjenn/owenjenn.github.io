@@ -1,0 +1,425 @@
+/* CSS Variables for Dark Theme */
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border-color: #30363d;
+    --success: #3fb950;
+    --warning: #d29922;
+    --error: #f85149;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.site-tagline {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Navigation Tabs */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.tab-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+}
+
+.tab-btn.active {
+    color: var(--accent);
+    background-color: var(--bg-tertiary);
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Main Content */
+main.content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Tab Content Sections */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Headings */
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 1rem;
+    color: var(--text-primary);
+}
+
+/* About Section */
+.about-intro {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.about-intro p {
+    margin-bottom: 0.75rem;
+}
+
+.about-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.about-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-details li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.about-details li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Gridirony Section */
+.section-intro {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.predictions-container {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.prediction-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prediction-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.prediction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.sport-tag {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.prediction-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.matchup {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.prediction {
+    margin-bottom: 0.5rem;
+}
+
+.reasoning {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.result {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.result.pending {
+    background-color: var(--bg-tertiary);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+.result.correct {
+    background-color: rgba(63, 185, 80, 0.15);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.result.incorrect {
+    background-color: rgba(248, 81, 73, 0.15);
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+/* Stats Summary */
+.stats-summary {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.stats-summary h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.stat {
+    padding: 1rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 6px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Resume Section - PDF Embed */
+.resume-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-download,
+.btn-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-download {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+.btn-download:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+.btn-view {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-view:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.pdf-container {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pdf-container embed {
+    display: block;
+    border: none;
+}
+
+.pdf-fallback {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.pdf-fallback a {
+    color: var(--accent);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .tab-nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    main.content {
+        padding: 1.5rem 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prediction-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .pdf-container embed {
+        height: 500px;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+    }
+
+    .btn-download,
+    .btn-view {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1.75rem;
+    }
+
+    .tab-nav {
+        gap: 0.25rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}
